@@ -1,4 +1,4 @@
-﻿using Content.Server.Speech.Components;
+﻿using Content.Server.Corvax.Speech.Components;
 using Robust.Shared.Random;
 using System.Text.RegularExpressions;
 
