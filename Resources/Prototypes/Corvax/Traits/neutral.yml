@@ -1,0 +1,6 @@
+- type: trait
+  id: NoSwearing
+  name: trait-no-swear-name
+  description: trait-no-swear-desc
+  components:
+  - type: NoSwearingAccent
