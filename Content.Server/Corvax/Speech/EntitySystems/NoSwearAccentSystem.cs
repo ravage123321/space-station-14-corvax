@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Content.Server.Corvax.Speech.EntitySystems;
 
-public sealed class NoSwearingAccentSystem : EntitySystem
+public sealed class NoSwearAccentSystem : EntitySystem
 {
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
 
@@ -12,19 +12,19 @@ public sealed class NoSwearingAccentSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<NoSwearingAccentComponent, AccentGetEvent>(OnAccentGet);
+        SubscribeLocalEvent<NoSwearAccentComponent, AccentGetEvent>(OnAccentGet);
     }
 
     // converts left word when typed into the right word.
-    public string Accentuate(string message, NoSwearingAccentComponent component)
+    public string Accentuate(string message, NoSwearAccentComponent component)
     {
         var msg = message;
 
-        msg = _replacement.ApplyReplacements(msg, "no-swear");
+        msg = _replacement.ApplyReplacements(msg, "noswear");
         return msg;
     }
 
-    private void OnAccentGet(EntityUid uid, NoSwearingAccentComponent component, AccentGetEvent args)
+    private void OnAccentGet(EntityUid uid, NoSwearAccentComponent component, AccentGetEvent args)
     {
         args.Message = Accentuate(args.Message, component);
     }
