@@ -2,7 +2,7 @@
 using Robust.Shared.Random;
 using System.Text.RegularExpressions;
 
-namespace Content.Server.Corvax.Speech.EntitySystems;
+namespace Content.Server.Speech.EntitySystems;
 
 public sealed class NoSwearAccentSystem : EntitySystem
 {
