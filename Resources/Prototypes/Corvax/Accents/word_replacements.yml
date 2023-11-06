@@ -1,0 +1,4 @@
+- type: accent
+  id: noswear
+  wordReplacements:
+    accent-noswear-replaced-1: accent-noswear-replacement-1
